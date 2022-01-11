@@ -30,7 +30,7 @@ def main():
     paths = get_files_endswith(endswith, owner, repo, branch, token)
     print(paths)
 
-    update_wixdocs_with(paths, owner, wixdocs_api)
+    update_wixdocs_with(paths, owner, repo, wixdocs_api)
 
 if __name__ == "__main__":
     main()
