@@ -1,0 +1,20 @@
+name: "Update wixdocs"
+description: "Post all the .wixdocs.yaml to wixdocs api"
+author: "moriyat@wix.com"
+
+inputs:
+  TOKEN:
+    description: "Access token"
+    required: false
+    default: "no-token" 
+  WIXDOCS_API:
+    description: "WixDocs api"
+    required: true
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  icon: "mic"
+  color: "purple"
