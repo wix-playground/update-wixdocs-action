@@ -18,7 +18,7 @@ def is_valid_repo_name(repo_name):
     repo_name and "/" in repo_name
 
 def main():    
-    token = None if sys.argv[1] == "no-token" else sys.argv[3]
+    token = None if sys.argv[1] == "no-token" else sys.argv[1]
     wixdocs_api = sys.argv[2]
 
     repo_full_name = os.getenv("GITHUB_REPOSITORY")
