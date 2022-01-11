@@ -14,18 +14,13 @@ def extract_details_from(repo_details_string):
     
     return owner, repo, branch
 
-def is_valid_repo_name(repo_name):
-    repo_name and "/" in repo_name
-
 def main():    
     token = None if sys.argv[1] == "no-token" else sys.argv[1]
     wixdocs_api = sys.argv[2]
 
     repo_full_name = os.getenv("GITHUB_REPOSITORY")
     
-    if not is_valid_repo_name(repo_full_name):
-        print(f"Invalid repo name: {repo_full_name}")
-        return
+    print(repo_full_name)
     
     owner, repo = repo_full_name.split("/")
     branch = "master"
