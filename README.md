@@ -8,7 +8,7 @@ This action will update wixdocs in every push to master, by posting all the file
 Add new .yml file under `.github/workflows` directory in your repo:
 
 ```yml
-name: Update wixdocs
+name: Update WixDocs
 on: 
   push:
     branches:
@@ -16,13 +16,17 @@ on:
 
 jobs:
   build:
-    name: Update wixdocs api
+    name: Update WixDocs API
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: wix-playground/update-wixdocs-action/update-wixdocs-action@master
         with:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WIXDOCS_API: "WIX DOCS API"
+          WIXDOCS_API: "<WIX-DOCS-API>"
 
 ```
+---
+**NOTE**
+You need to replace `<WIX-DOCS-API>` with the WixDocs API endpoint, you can find that [here](https://github.com/wix-private/p13n/blob/master/wixplorer/docs-internal-rnd/guides/How%20to%20Generate%20Documentation.md#manual-update-by-post-request)
+___
